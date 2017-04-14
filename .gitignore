@@ -2,3 +2,6 @@ packer_cache
 packer_cache/*
 *.box
 *.iso
+
+#mac related
+.DS_Store
