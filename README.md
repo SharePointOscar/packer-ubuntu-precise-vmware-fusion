@@ -15,20 +15,23 @@ Build a new Vagrant base box for VMWare Fusion based on Ubuntu 14.04 LTS x86_64
 * Python Setuptools for easy_install and pip
 * No root login allowed
 * Standard no-password `vagrant` user
-* VMWare Tools installed 
+* VMWare Tools installed
 * VirtualBox Guest Additions Installed
 
 ## Installation
 
 Install the correct [Packer](http://packer.io) for your system.
 
-	packer build ubuntu-trusty.json
+There are two build templates - VirtualBox and VMWare Fusion.  To build the VirtualBox version, simply execute the following:
 
-Once this has completed, there will be an `ubuntu-trusty.box` file th the provider
+``` bash
+	packer build ubuntu-trusty-virtualbox.json
+```
+
+Once this has completed, there will be an `ubuntu-trusty.box` file the the provider
 included in the file name in the current directory.
 
 This can be imported to Vagrant with
-
+```bash
 	vagrant box add ubuntu-trusty-<type> /path/to/ubuntu-precise.<type>.box --provider [vmware_fusion,virtualbox]
-
-
+```

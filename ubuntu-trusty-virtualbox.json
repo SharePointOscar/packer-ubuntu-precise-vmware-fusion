@@ -1,7 +1,7 @@
 {
   "builders": [{
     "type": "virtualbox-iso",
-    "headless": true,
+    "headless": false,
     "boot_command": [
       "<esc><esc><enter><wait>",
       "/install/vmlinuz noapic preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
@@ -14,9 +14,9 @@
     "boot_wait": "4s",
     "disk_size": 10140,
     "http_directory": "http",
-    "iso_url": "http://releases.ubuntu.com/zesty/ubuntu-17.04-desktop-amd64.iso",
+    "iso_url": "http://releases.ubuntu.com/trusty/ubuntu-14.04.5-server-amd64.iso",
     "iso_checksum_type": "md5",
-    "iso_checksum": "18cc54af55d7ca931bbb8588e8d9c1bd",
+    "iso_checksum": "dd54dc8cfc2a655053d19813c2f9aa9f",
     "guest_os_type": "Ubuntu_64",
     "ssh_username": "vagrant",
     "ssh_password": "vagrant",
@@ -42,7 +42,7 @@
     "compression_level": 9,
     "override": {
       "virtualbox": {
-        "output": "ubuntu-17.04-desktop-amd64-virtualbox.box"
+        "output": "ubuntu-14.04.5-server-amd64-virtualbox.box"
       }
     }
   }]
